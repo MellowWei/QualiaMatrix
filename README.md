@@ -27,3 +27,4 @@
 
 ## 0x03 Contact & Collaboration
 Designed by **Jueran Wei** @ University of Pennsylvania.
+Check out the visual manifestation core: [qualia-core.js](qualia-core.js)
