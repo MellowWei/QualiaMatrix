@@ -3,19 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qualia Matrix | Jueran Wei</title>
+    <title>QUALIA MATRIX // 77347</title>
     <style>
-        body { margin: 0; overflow: hidden; background: #000; }
-        #overlay {
-            position: absolute; bottom: 20px; left: 20px;
-            color: #00ffa2; font-family: monospace;
-            letter-spacing: 2px; pointer-events: none;
-            text-transform: uppercase; opacity: 0.7;
+        body { margin: 0; overflow: hidden; background: #000; color: #00ffa2; font-family: 'Courier New', Courier, monospace; }
+        
+        /* 极致简易的 UI 质感 */
+        #interface-layer {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            pointer-events: none;
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+            line-height: 1.5;
+        }
+
+        #protocol-title { font-size: 20px; font-weight: bold; margin-bottom: 10px; color: #fff; }
+        #variable-s-status { color: #ff0055; }
+
+        #sync-trigger {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            padding: 30px; border: 1px solid #00ffa2; cursor: pointer;
+            background: rgba(0,0,0,0.9); z-index: 100; letter-spacing: 5px;
+            transition: all 0.3s;
+        }
+        #sync-trigger:hover { background: #00ffa2; color: #000; }
+
+        #recovery-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; display: none; z-index: 200;
+            justify-content: center; align-items: center;
+            font-size: 24px; letter-spacing: 15px; color: #ff0055;
         }
     </style>
 </head>
 <body>
-    <div id="overlay">427Hz Frequency Sync // Jueran Wei</div>
-    <script type="module" src="qualia-core.js"></script>
+
+    <div id="interface-layer">
+        <div id="protocol-title">Qualia Matrix Protocol v7.0</div>
+        <div>Designer: Jueran Wei // 427Hz</div>
+        <div>Status: <span id="variable-s-status">Variable S Active</span></div>
+        <br>
+        <div>[ System Manifesto ]</div>
+        <div style="width: 300px; font-size: 10px; opacity: 0.8;">
+            1. 427Hz Binaural Sync: Intercepting Subconscious Noise.<br>
+            2. Recursive Vision: Erasing the Physical Constant.<br>
+            3. Sovereign Attractor: Gravity is an Intentional Act.<br>
+            4. Asset Recovery 77347: Total Reclamation Authorized.
+        </div>
+        <br>
+        <div>Observing... <span id="frame-rate">427Hz</span></div>
+    </div>
+
+    <div id="sync-trigger">[ SYNC SENSES // 427HZ ]</div>
+    <div id="recovery-overlay">ASSET RECOVERY: 77347</div>
+
+    <script type="module" src="./qualia-core.js"></script>
+
+    <script>
+        // 简单的 UI 动态同步逻辑
+        const status = document.getElementById('variable-s-status');
+        setInterval(() => {
+            status.innerText = Math.random() > 0.8 ? "REBELLION DETECTED" : "VARIABLE S ACTIVE";
+            status.style.color = status.innerText === "REBELLION DETECTED" ? "#ff0055" : "#00ffa2";
+        }, 2000);
+    </script>
 </body>
 </html>
